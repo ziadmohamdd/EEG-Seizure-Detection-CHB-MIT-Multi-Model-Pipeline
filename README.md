@@ -36,7 +36,7 @@ Results are in `Results/` (`results.csv`, `results_ecg_cnn2d.csv`, `leaderboard.
   both datasets.** ECG enters a network only in `03b_CNN2D_ECG_Experiment.ipynb`.
 - Windows: 4 s, 2 s step. Absolute Welch band power, 0.5 to 70 Hz. A window is a seizure window if at least 50% overlaps an annotated seizure. Windows with any channel above 500 uV peak-to-peak are dropped.
 - Raw `.edf` files and the generated CSVs are not included (size). Regenerate them with notebook 01.
-- Dataset A used in the benchmark holds 691,178 windows (691,185 rows minus 7 rows with NaN features). The final preprocessing run reported 1,057,575 windows, so the benchmark file is a subset of that run.
+- Dataset A used in the benchmark holds 691,178 windows (691,185 rows minus 7 rows with NaN features). The final preprocessing run reported 1,057,575 windows, so the benchmark file may come from an earlier preprocessing run.
 - Dataset B covers 3 patients; only chb04 (74) and chb12 (30) have seizure windows.
 
 ## Protocol
@@ -71,7 +71,7 @@ early stopping on validation AUC; RBF-SVM on the learned embedding (random 20,00
 - Most records contain two channels both named `T8-P8`; MNE renames them `T8-P8-0` / `T8-P8-1`, so name matching silently dropped the channel.
 - The ECG channel is labeled `ECG` (36 records), `EKG1-CHIN` (2) or `EKG1-EKG2` (1). `VNS` and `LOC-ROC` are not cardiac.
 - Per-patient channel sets differed, which changed the number of feature columns and broke the combined CSV. Features are now written on a fixed 18 x 5 layout; missing channels are zero-filled (chb12_27 to chb12_29 contain none of the 18 derivations).
-- Seven malformed rows in the Dataset A file are removed at load time.
+- Seven rows with missing (NaN) feature values in the Dataset A file are dropped at load time.
 
 ## Limitations
 
