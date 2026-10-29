@@ -1,6 +1,6 @@
 # EEG Seizure Detection on CHB-MIT: Multi-Architecture Benchmark
 
-Code and results for the paper *Accuracy Versus Complexity: A Window-Level Benchmark of Six Deep Architectures for Seizure Detection on CHB-MIT EEG* (A. Solia, E. Dwedar, Z. Mohamed, A. Anter; E-JUST).
+Code and results for the paper *Accuracy Versus Complexity: A Window-Level Benchmark of Six Deep Architectures for Seizure Detection on CHB-MIT EEG.*
 
 Six deep architectures are trained on band-power features from the
 [CHB-MIT Scalp EEG Database](https://physionet.org/content/chbmit/1.0.0/) under
