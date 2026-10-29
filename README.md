@@ -11,7 +11,7 @@ CNN2D experiment tests whether ECG mean power helps as a network input.
 describe window-level separability within the same recordings. They are not a
 measure of performance on unseen patients.
 
-## Files (`Final Models/Phases/`)
+## Files (`Phases/`)
 
 | File | Purpose |
 |---|---|
@@ -26,7 +26,7 @@ measure of performance on unseen patients.
 | `08_Model6_ComplexHybrid.ipynb` | Three-branch CNN / LSTM / Conformer hybrid |
 | `09_Phase3_ResultsCompilation.ipynb` | Builds the leaderboard from `results.csv` |
 
-Results are in `Final Models/Results/` (`results.csv`, `results_ecg_cnn2d.csv`, `leaderboard.xlsx`).
+Results are in `Results/` (`results.csv`, `results_ecg_cnn2d.csv`, `leaderboard.xlsx`).
 
 ## Data
 
